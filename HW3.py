@@ -3,19 +3,19 @@
 # Пример:
 # - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-import random
-N = int(input('Введие размер списка... '))
-listN = []
-for s in range(N):
-    listN.insert(s, int(random.random() * 10))
-print('Получен список с рандомными числами ==>>',listN)
-sum = 0
-for i in range(N):
-    if i % 2 != 0:
-        sum += listN[i]
-    else:
-        i = i + 1
-print(sum)
+# import random
+# N = int(input('Введие размер списка... '))
+# listN = []
+# for s in range(N):
+#     listN.insert(s, int(random.random() * 10))
+# print('Получен список с рандомными числами ==>>',listN)
+# sum = 0
+# for i in range(N):
+#     if i % 2 != 0:
+#         sum += listN[i]
+#     else:
+#         i = i + 1
+# print(sum)
 
 
 # 2. Напишите программу, которая найдёт произведение пар чисел списка. 
@@ -24,7 +24,20 @@ print(sum)
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-
+import random
+N = int(input('Введие размер списка... '))
+listN = []
+for s in range(N):
+    listN.insert(s, int(random.random() * 10))
+print('Получен список с рандомными числами ==>>', listN)
+listSum = []
+for i in range(len(listN)):
+    while i < len(listN)/2 and N > len(listN)/2:
+        N = N - 1
+        S = listN[i] * listN[N]
+        listSum.append(S)
+        i += 1
+print('Получен список с перемноженными парами числами ==>>', listSum)
 
 # 3. Задайте список из вещественных чисел. Напишите программу, 
 # которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
