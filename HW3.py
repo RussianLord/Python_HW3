@@ -44,28 +44,19 @@
 # Пример:
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
-# import random
-# N = int(input('Введие размер списка... '))
-# listN = []
-# for s in range(N):
-#     listN.insert(s, round(random.random() * 10, 2))
-# print('Получен список с рандомными числами ==>>', listN)
+import random
+N = int(input('Введите размер списка... '))
+listN = []
+listSplit = []
+for i in range(N):
+    listN.insert(i, str(round(random.random() * 10, 2)).split('.'))
+    listSplit.insert(i, listN[i][1])
+print(f'Созданный рандомный список с разделением по точке ==>> {listN}')
+print(f'Отделяем цифры после запятой в отдельный список ==>> {listSplit}')
+maxN = int(max(listSplit))
+minN = int(min(listSplit))
+print(f'Максимальное число = {maxN} Минимальное число = {minN}\n Разница {maxN} - {minN} = {maxN-minN}')
 
-# maxIndex = listN[0]
-# minIndex = listN[0]
-# for i in listN:
-#     if maxIndex < listN.index(str.split(i)[1][0][1]):
-#         maxIndex = listN.index(str.split(i))
-#     else:
-#         i += 1
-# for i in listN:
-#     if minIndex > listN.index(str.split(i)[1][0][1]):
-#         minIndex = listN.index(str.split(i))
-#     else:
-#         i += 1
-# print(maxIndex)
-# print(minIndex)
-# print(maxIndex+minIndex)
 
 # 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 # Пример:
@@ -74,16 +65,10 @@
 # - 2 -> 10
 
 
-N = int(input("Введите число для преобразовывания десятичного числа в двоичное:\n"))
-S = ""
-while N != 0:
-    S = str(N % 2) + S
-    N //=2
-print(S)
+# N = int(input("Введите число для преобразовывания десятичного числа в двоичное:\n"))
+# S = ""
+# while N != 0:
+#     S = str(N % 2) + S
+#     N //=2
+# print(S)
         
-
-
-
-# 5. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
-# Пример:
-# - для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
