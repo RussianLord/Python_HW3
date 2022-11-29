@@ -24,33 +24,63 @@
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-import random
-N = int(input('Введие размер списка... '))
-listN = []
-for s in range(N):
-    listN.insert(s, int(random.random() * 10))
-print('Получен список с рандомными числами ==>>', listN)
-listSum = []
-for i in range(len(listN)):
-    while i < len(listN)/2 and N > len(listN)/2:
-        N = N - 1
-        S = listN[i] * listN[N]
-        listSum.append(S)
-        i += 1
-print('Получен список с перемноженными парами числами ==>>', listSum)
+# import random
+# N = int(input('Введие размер списка... '))
+# listN = []
+# for s in range(N):
+#     listN.insert(s, int(random.random() * 10))
+# print('Получен список с рандомными числами ==>>', listN)
+# listSum = []
+# for i in range(len(listN)):
+#     while i < len(listN)/2 and N > len(listN)/2:
+#         N = N - 1
+#         S = listN[i] * listN[N]
+#         listSum.append(S)
+#         i += 1
+# print('Получен список с перемноженными парами числами ==>>', listSum)
 
 # 3. Задайте список из вещественных чисел. Напишите программу, 
 # которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
 # Пример:
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
+# import random
+# N = int(input('Введие размер списка... '))
+# listN = []
+# for s in range(N):
+#     listN.insert(s, round(random.random() * 10, 2))
+# print('Получен список с рандомными числами ==>>', listN)
 
+# maxIndex = listN[0]
+# minIndex = listN[0]
+# for i in listN:
+#     if maxIndex < listN.index(str.split(i)[1][0][1]):
+#         maxIndex = listN.index(str.split(i))
+#     else:
+#         i += 1
+# for i in listN:
+#     if minIndex > listN.index(str.split(i)[1][0][1]):
+#         minIndex = listN.index(str.split(i))
+#     else:
+#         i += 1
+# print(maxIndex)
+# print(minIndex)
+# print(maxIndex+minIndex)
 
 # 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 # Пример:
 # - 45 -> 101101
 # - 3 -> 11
 # - 2 -> 10
+
+
+N = int(input("Введите число для преобразовывания десятичного числа в двоичное:\n"))
+S = ""
+while N != 0:
+    S = str(N % 2) + S
+    N //=2
+print(S)
+        
 
 
 
